@@ -4,7 +4,7 @@
 
 - NextJS provides different methods for page pre-rendering
 
-1. SSG (Static Site Generation)
+### 1. SSG (Static Site Generation)
 
 - Static generation is when nextJS generates the HTML for the page based on the content (fetched from API or data source) and stores it as static HTML.
 - So when a user visit the page they receive the pre-built HTML content.
@@ -15,7 +15,7 @@
   - The fetched data is passed as props to the component to render the HTML.
   - The page will be pre-generated at build time and served as static content.
 
-2. SSR (Server Sider Rendering)
+### 2. SSR (Server Sider Rendering)
 
 - Server side rendering is when HTML for a page is generated on every request, not at build time. This means, page content is generated dynamically on the server for every user visit.
 - when a user request a page, the server generates the HTML on fly based on the latest data
@@ -23,7 +23,7 @@
 - useful for pages where data must be up-to-date and personalized such as user profiles, dashboards, pages with content that change frequently
 - To enable SSR in NextJS, we can use 'getServerSideProps', which fetch data and generate the page on each request
 
-3. ISR (Incremental Static Regeneration)
+### 3. ISR (Incremental Static Regeneration)
 
 - it allows to update static content after the page has been built.With ISR, NextJS let us generate the static pages during runtime and update them as needed without rebuilding the entire site
 - We can use 'getStaticProps' to create static pages but also specify how often they should be regenerated using the 'revalidate' property
