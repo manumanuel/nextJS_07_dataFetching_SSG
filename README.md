@@ -61,3 +61,37 @@ Properly managing client-specific logic and using tools like useEffect or dynami
 
 - if a component has getStaticProps function then it should run first and then run the component function
 - getStaticProps must return an object with 'props' key
+- if we want to pass any params to the getStaticProps method,
+  we should add 'context' as params
+  -eg: export async function getStaticProps(context)
+  {
+  return {
+  props:{},
+  revalidate : n,
+  }
+  }
+
+- other properties we can use in getStaticProps methods are,
+  - redirect
+  - notFound
+
+## Implementation - getStaticProps with ISR
+
+- if we want to refresh the content in a certain period,
+  we should add 'revalidate : n', (where n is the no of sec)
+  along with props property.
+
+## Implementation of getStaticPaths
+
+- This is useful for pre-rendering pages dynamically.
+- ie if we set page load as dynamic (eg:[id]), we should specify the concrete instance using 'getStaticPaths', to load in case of pre-render
+  (otherwise in browser based loading we can use router.query)
+- is should have a paths array in return object with pre-defined routes as object,
+- another parameter is fallback
+- eg: export async function getStaticPaths(){
+  return{
+  paths:[{params:{id:'1'}},
+  {params:{id:'2'}}],
+  fallback:false
+  }
+  }
