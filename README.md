@@ -95,3 +95,9 @@ Properly managing client-specific logic and using tools like useEffect or dynami
   fallback:false
   }
   }
+
+  ### use cases of fallback in getStaticPaths
+
+- fallback: false, only pre-render paths specified in getStaticPaths; otherwise show 404
+- fallback: true, show a loading-state for new page while the nextJS generate the pages on-demand
+- fallback: 'blocking', wait until the page is fully loaded before serving to user [ie no loading state]
