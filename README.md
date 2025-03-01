@@ -101,3 +101,15 @@ Properly managing client-specific logic and using tools like useEffect or dynami
 - fallback: false, only pre-render paths specified in getStaticPaths; otherwise show 404
 - fallback: true, show a loading-state for new page while the nextJS generate the pages on-demand
 - fallback: 'blocking', wait until the page is fully loaded before serving to user [ie no loading state]
+
+## Implementation of getServerSideProps
+
+- implementation of getServerSideProps is just like getStaticProps without revalidate option
+- it has params, notFound, redirect properties
+- instead of pre-render it gets called for every req
+- context property has req, res objects along with params object
+- eg: implemented in last-sale.js
+  - used firebase for backend data
+  - it will return data as a json object
+  - we have to convert that to array to present on ui
+  - for that purpose 'convertedSales' array added
