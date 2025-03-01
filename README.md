@@ -113,7 +113,19 @@ Properly managing client-specific logic and using tools like useEffect or dynami
 ## Implementation of client side fetching
 
 - eg: implemented in last-sale.js
+
   - used firebase for backend data
   - it will return data as a json object
   - we have to convert that to array to present on ui
   - for that purpose 'convertedSales' array added
+
+  ## Implementation of useSWR hook instead of useEffect for client side data fetching
+
+  - useSWR hook is developed by nextJS team
+  - using this hook we can catch any error in server-side calling
+
+  # Combining both server & client side rendering together
+
+  - useStaticProps for server side pre-fetching
+  - also implemented ISR for revalidating in 10 sec after initial render
+  - then the client loading with help of useSWR
