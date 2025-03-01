@@ -108,6 +108,10 @@ Properly managing client-specific logic and using tools like useEffect or dynami
 - it has params, notFound, redirect properties
 - instead of pre-render it gets called for every req
 - context property has req, res objects along with params object
+- eg: implemented in [ui].js
+
+## Implementation of client side fetching
+
 - eg: implemented in last-sale.js
   - used firebase for backend data
   - it will return data as a json object
